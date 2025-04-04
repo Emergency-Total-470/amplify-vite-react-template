@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Marquee from "react-fast-marquee"; // ✅ New import
 import {
   LineChart,
   Line,
@@ -66,9 +67,9 @@ const features: { title: string; desc: string }[] = [
 export default function Home(): JSX.Element {
   return (
     <Container fluid className="min-vh-100 d-flex flex-column align-items-center py-5">
-      {/* Stock Ticker */}
+      {/* ✅ Fixed Stock Ticker */}
       <div className="w-100 bg-dark text-white text-center py-2">
-        <marquee>
+        <Marquee>
           {stockTickerData.map((stock, index) => (
             <span key={index} className="mx-3">
               {stock.symbol}: ${stock.price}{" "}
@@ -81,7 +82,7 @@ export default function Home(): JSX.Element {
               </span>
             </span>
           ))}
-        </marquee>
+        </Marquee>
       </div>
 
       {/* Hero Section */}
